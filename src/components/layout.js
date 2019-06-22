@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import 'prismjs/themes/prism.css';
 
 import { rhythm, scale } from "../utils/typography"
 
