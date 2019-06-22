@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Front-end bits`,
+    author: `Rares Matei`,
+    authorFirstName: `Rares`,
+    description: `Sometimes I learn stuff that I think is cool. So I'll share it here.`,
+    siteUrl: `https://rares.uk/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `volkeron`,
     },
   },
   plugins: [
@@ -42,6 +43,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-twitter`
         ],
       },
     },
@@ -57,13 +59,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Front-end bits`,
+        short_name: `FE-Bits`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/js-logo.png`,
       },
     },
     `gatsby-plugin-offline`,
