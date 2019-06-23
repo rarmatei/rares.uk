@@ -1,7 +1,7 @@
 ---
 title: Building an RxJS .endWith() operator
-date: "2019-06-22T21:24:25.454Z"
-description: ''
+date: "2017-04-23T21:24:25.454Z"
+description: 'Here I investigate different ways of achieving .endWith() functionality in RxJS'
 ---
 
 > This post was originally written on Apr. 23rd 2017. Since then an [endWith](https://rxjs.dev/api/operators/endWith) operator has been officially added to the library.
