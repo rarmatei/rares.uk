@@ -1,6 +1,6 @@
 ---
 title: RxJS - Unsubscribe delay
-date: "2017-10-22T21:24:25.454Z"
+date: "2017-10-25T21:24:25.454Z"
 description: 'Sharing an observable is amazingly useful. But sometimes we might want to keep the subscription alive for a few seconds even after all listeners have unsubscribed.'
 ---
 
