@@ -97,7 +97,7 @@ See this amazing presentation on the JAMStack from [Phil Hawksworth](https://twi
 
 ##APIs
 
-Another thing worth mentioning is that it's perfectly fine for a static site to call APIs. You can still serve assets statically - and there's nothing stopping the served JS from making some HTTP request. That's why Netlify launched its companion [Functions](https://www.netlify.com/products/functions/) product.
+Another thing worth mentioning is that it's perfectly fine for a static site to call APIs. You can still serve assets statically - and there's nothing stopping the served JS from making some HTTP request. That's why Netlify launched its companion [Functions](https://www.netlify.com/products/functions/) product - so you can continue serving your front-end statically, and if you need any back-end work, instead of moving your whole stack to a single server, you can just create some Lambda Functions to handle your back-end needs.
 
 ##Conclusion
 
