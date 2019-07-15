@@ -6,7 +6,7 @@ description: 'Using Gatsby and Netlify for the first the first time got me think
 
 Using Gatsby and Netlify for the first time got me thinking. Sure, Gatsby + Netlify give you a super fast site - but why is it so fast?
 
-What does "static" mean in static site generator? Gatsby uses React - a framework which I've seen used to build some pretty "dynamic" things. What's stopping me from adding a chat widget onto my static Gatsby site - would that break the world?
+What does "static" mean in static site generator? Gatsby uses React - a framework which I've seen used to build some pretty "dynamic" things. For example, what if I add a chat widget that makes API calls in realtime and offers live scrolling messages onto my static Gatsby site - would that break the world?
 
 So here's my journey down that rabbit hole..and with it, the first light bulb moment:
 
