@@ -227,3 +227,83 @@ field:
 ![Scaring bob](./bob_scare.gif)
 
 [See the complete example here](https://codesandbox.io/s/apollo-reactive-variables-8s3h8?file=/src/App.js)
+
+## Summary
+
+We just used Type Policies and Reactive variables to sprinkle local state in our GraphQL queries:
+
+```typescript
+const bobVar = makeVar("😴");
+
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        bob() {
+          return bobVar();
+        }
+      }
+    }
+  }
+});
+```
+
+```typescript
+  const { data } = useQuery(
+    gql`
+      query {
+        bob @client
+      }
+    `
+  );
+```
+
+The data is set in some central place, and all components querying it re-render automatically when it changes.
+
+# Why is this useful?
+
+Imagine you have a list of notes. These come from a GraphQL backend. 
+
+![Local state example](./local_state_example.gif)
+
+But then what if you wanted to track selection state of each note? 
+Maybe you want to allow the user to select a few notes, and then delete them in bulk.
+The backend shouldn't care about which notes are selected at any one time. And we don't care if we lose that selection status on page refresh.
+It's a transient piece of client state.
+
+Since the selection status is a property of each note we can use a query like this:
+
+```typescript
+const ALL_NOTES_QUERY = gql`
+  query GetAllNotes {
+    notes {
+      id
+      content
+      isSelected @client
+    }
+  }
+`;
+```
+
+Then if other components need the selection status, like the "Edit box" on the right of the note in the above GIF, they'll automatically
+get the update when the "Selection" status is toggle as part of the list on the left.
+
+### Incremental GraphQL adoption
+
+If your backend isn't completely ready for GraphQL, you can still start building up your queries in your components, but populate the data
+on the client.
+
+Then as different entities become available on the backend graph, you can just remove the `@client` directive from your queries and
+they'll start propagating to the backend:
+
+```typescript
+const ALL_NOTES_QUERY = gql`
+  query GetAllNotes {
+    notes {
+      id
+      content
+      isSelected @client --> isSelected
+    }
+  }
+`;
+```
