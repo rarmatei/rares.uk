@@ -227,15 +227,3 @@ field:
 ![Scaring bob](./bob_scare.gif)
 
 [See the complete example here](https://codesandbox.io/s/apollo-reactive-variables-8s3h8?file=/src/App.js)
-
-## Coming soon - Reactive Variables and mutations
-
-Our existing setup is nice because components have a consistent mechanism for requesting data in the shape that they want, regardless of whether
-that data comes from the server or is client-only.
-
-But if they want to **request changes to that data**, they have to either **create a mutation** (for server data) or **update the reactive
-variables** (for client data). So the mechanism for updating data is still inconsistent.
-
-Stay tuned for the next article, where we'll look at how to abstract away the logic of updating your Reactive Variables inside
-a **mutation field policy**, after which components will be able to always and consistently make GraphQL mutations 
-for updating entities (server or client only).
